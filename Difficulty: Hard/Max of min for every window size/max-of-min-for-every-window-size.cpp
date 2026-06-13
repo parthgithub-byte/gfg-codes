@@ -18,7 +18,7 @@ class Solution {
             st.pop();
         }
         
-        // now we will find the nextGreater index
+        // now we will find the lefttSmaller index
         vector<int>ansRight(n,n);
         for (int i=0; i<n; i++){
             while (!st.empty() && arr[i] < arr[st.top()]){
@@ -58,15 +58,16 @@ Eg:
 10 20 15 30 50 70 30 25
 
 10: 8
-20: 2
-15: 6
+20: 1
+15: 7
 30: 4
 50: 2
 70: 1
-25: 1
+30: 4
+25: 5
         
 ans (right now):
- 0 70 50 0 30 0 15 0 10
+ 0 70 50 0 30 25 15 10
 */      
 
         ans.erase(ans.begin(), ans.begin()+1);  // removing the first dummy index in the ans array
